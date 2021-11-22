@@ -7,10 +7,7 @@ export default function Product(props) {
     <div key={product._id} class="col-lg-4 col-sm-6">
       <div class="product-item">
         <div class="pi-pic">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/images/products/product-1.jpg`}
-            alt=""
-          />
+          <img src={product.image} alt="" />
 
           <div class="icon">
             <i class="icon_heart_alt"></i>
@@ -32,7 +29,7 @@ export default function Product(props) {
           </ul>
         </div>
         <div class="pi-text">
-          <div class="catagory-name">Towel</div>
+          <div class="catagory-name">{product.brand}</div>
           <a href={`/product/${product._id}`}>
             <h5>{product.name}</h5>
           </a>
