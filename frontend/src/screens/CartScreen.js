@@ -6,6 +6,7 @@ import MessageBox from "../components/MessageBox";
 
 export default function CartScreen(props) {
   const productId = props.match.params.id;
+  console.log(productId);
   const qty = props.location.search
     ? Number(props.location.search.split("=")[1])
     : 1;
@@ -106,12 +107,9 @@ export default function CartScreen(props) {
                 <div class="row">
                   <div class="col-lg-4">
                     <div class="cart-buttons">
-                      <a href="#" class="primary-btn continue-shop">
+                      <Link to="/" class="primary-btn continue-shop">
                         Continue shopping
-                      </a>
-                      <a href="#" class="primary-btn up-cart">
-                        Update cart
-                      </a>
+                      </Link>
                     </div>
                     <div class="discount-coupon">
                       <h6>Discount Codes</h6>
