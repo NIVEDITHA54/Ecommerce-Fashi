@@ -1,7 +1,21 @@
+import bcrypt from "bcryptjs";
 const data = {
+  users: [
+    {
+      name: "Nived",
+      email: "niven@example.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: true,
+    },
+    {
+      name: "Suddu",
+      email: "suddu@example.com",
+      password: bcrypt.hashSync("1234", 8),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
-      _id: "1",
       name: "Women Open Front Jacket",
       category: "Jacket",
       image:
@@ -15,7 +29,6 @@ const data = {
         "Brown & Black self design open front jacket, has a lapel collar, pockets long sleeves, straight hemline, synthetic lining.",
     },
     {
-      _id: "2",
       name: "Striped Wrap Dress",
       category: "Dress",
       image:
@@ -29,7 +42,6 @@ const data = {
         "Brown and Orange striped woven wrap dress, has a V-neck, short sleeves, concealed zip closure, an attached lining, and straight hem.",
     },
     {
-      _id: "3",
       name: "White Lace Sheath Dress",
       category: "Shirts",
       image:
@@ -43,7 +55,6 @@ const data = {
         "White self design self design sheath dress.Shirt collar,Long and cuffed sleeves.Knee length in flared hem.Lace fabric.Button closure",
     },
     {
-      _id: "4",
       name: "Men Blue Icon Worker Chambray Shirt",
       category: "Shirts",
       image:
@@ -57,7 +68,6 @@ const data = {
         "GAP is one of the world's most iconic apparel and accessories brands and the authority on American casual style. Today, GAP continues to be the best destination for wardrobe essentials such as denim, tees, hoodies and great-fitting pants.Blue solid smooth chambray weave shirt.Long sleeves with button cuffs.Point collar Button front.Chest button-patch pockets with pen slot.Shirttail hem.",
     },
     {
-      _id: "5",
       name: "Men Green Solid Pullover Sweater",
       category: "Sweater",
       image:
@@ -71,7 +81,6 @@ const data = {
         "Green solid pullover sweater, has a round neck, long sleeves, and ribbed hem.",
     },
     {
-      _id: "6",
       name: "Women Pink Solid Basic Jumpsuit",
       category: "Jumpsuit",
       image:
