@@ -2670,9 +2670,6 @@ ol {
 }
 
 .cart-table table tr td.qua-col .pro-qty {
-  width: 123px;
-  height: 46px;
-  border: 2px solid #ebebeb;
   padding: 0 15px;
   float: left;
 }

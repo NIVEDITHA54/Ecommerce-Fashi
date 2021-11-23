@@ -87,7 +87,9 @@ export default function CartScreen(props) {
                               </div>
                             </div>
                           </td>
-                          <td class="total-price first-row">${item.price}</td>
+                          <td class="total-price first-row">
+                            ${item.price * item.qty}
+                          </td>
                           <td class="close-td first-row">
                             <i
                               class="ti-close"
