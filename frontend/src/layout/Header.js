@@ -1,10 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { signout } from "../actions/userActions";
 
 function Header() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
+  const signoutHandler = () => {
+    dispatch(signout());
+  };
   return (
     <header class="header-section">
       <div class="container">
@@ -38,11 +45,29 @@ function Header() {
                     {cartItems.length > 0 && <span>{cartItems.length}</span>}
                   </Link>
                 </li>
-                <li>
-                  <Link to="/" class="login-panel">
-                    <i class="fa fa-user p-2"></i>Login
-                  </Link>
-                </li>
+
+                {userInfo ? (
+                  <li>
+                    <Link to="#" class="login-panel">
+                      <i class="fa fa-user p-2"></i>
+                      {userInfo.name}
+                    </Link>
+
+                    <Link
+                      to="/signin"
+                      class="login-panel"
+                      onClick={signoutHandler}
+                    >
+                      <i class="fa fa-sign-out p-2"></i>Logout
+                    </Link>
+                  </li>
+                ) : (
+                  <li>
+                    <Link to="/signin" class="login-panel ml-2">
+                      <i class="fa fa-sign-in p-2"></i>Login
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
