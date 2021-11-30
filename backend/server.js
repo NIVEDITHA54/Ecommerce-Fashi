@@ -21,6 +21,7 @@ mongoose.connect(
 
 app.use("/api/users", userRouter);
 app.use("/api/products", productRouter);
+
 app.get("/", (req, res) => {
   res.send("Server is ready");
 });
@@ -29,7 +30,7 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-const port = process.env.PORT || 5500;
+const port = process.env.PORT || 5550;
 app.listen(port, () => {
   console.log(`Serve at http://localhost:${port}`);
 });
