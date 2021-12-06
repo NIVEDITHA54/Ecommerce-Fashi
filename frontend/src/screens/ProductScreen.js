@@ -165,15 +165,24 @@ export default function ProductScreen(props) {
                             </select>
                           </li>
                         </ul>
-                        <div class="quantity">
-                          <a
-                            onClick={addToCartHandler}
-                            class="primary-btn pd-cart"
-                            style={{ color: "#ffffff" }}
-                          >
-                            Add To Cart
-                          </a>
-                        </div>
+                        {product.countInStock > 0 ? (
+                          <div class="quantity">
+                            <a
+                              onClick={addToCartHandler}
+                              class="primary-btn pd-cart"
+                              style={{ color: "#ffffff" }}
+                            >
+                              Add To Cart
+                            </a>
+                          </div>
+                        ) : (
+                          <div class="quantity">
+                            <span class="danger">
+                              Currently the product is not in stock.We will
+                              notify you once it is available.
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
