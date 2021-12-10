@@ -35,13 +35,13 @@ export default function PlaceOrderScreen(props) {
   return (
     <div>
       <CheckoutSteps step1 step2 step3 step4></CheckoutSteps>
-      <section class="shopping-cart spad checkout-form">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="place-order">
+      <section className="shopping-cart spad checkout-form">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="place-order">
                 <h4>Shipping details</h4>
-                <div class="order-total">
+                <div className="order-total">
                   <p>
                     <strong>Name:</strong> {cart.shippingAddress.fullName}{" "}
                     <br />
@@ -52,35 +52,34 @@ export default function PlaceOrderScreen(props) {
                   </p>
                 </div>
               </div>
-              <div class="place-order mt-5">
+              <div className="place-order mt-5">
                 <h4>Payment details</h4>
-                <div class="order-total">
+                <div className="order-total">
                   <p>
                     <strong>Method:</strong> {cart.paymentMethod}
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div className="col-lg-6">
               <h4>Order Summary</h4>
-              <div class="proceed-checkout">
+              <div className="proceed-checkout">
                 <ul>
-                  <li class="subtotal">
+                  <li className="subtotal">
                     Items <span>${cart.itemsPrice.toFixed(2)}</span>
                   </li>
-                  <li class="subtotal">
+                  <li className="subtotal">
                     Shipping <span>${cart.shippingPrice.toFixed(2)}</span>
                   </li>
-                  <li class="subtotal">
+                  <li className="subtotal">
                     Tax <span>${cart.taxPrice.toFixed(2)}</span>
                   </li>
-                  <li class="cart-total">
+                  <li className="cart-total">
                     Order Total <span>${cart.totalPrice.toFixed(2)}</span>
                   </li>
                 </ul>
                 <a
-                  to="/"
-                  class="proceed-btn"
+                  className="proceed-btn"
                   type="button"
                   onClick={placeOrderHandler}
                   disabled={cart.cartItems.length === 0}
@@ -90,26 +89,28 @@ export default function PlaceOrderScreen(props) {
               </div>
             </div>
           </div>
-          <div class="row mt-5">
-            <div class="col-lg-6">
+          <div className="row mt-5">
+            <div className="col-lg-6">
               <h4>Order Items</h4>
-              <div class="cart-table">
+              <div className="cart-table">
                 <table>
                   <thead></thead>
 
                   <tbody>
                     {cart.cartItems.map((item) => (
                       <tr key={item.product}>
-                        <td class="cart-pic ">
+                        <td className="cart-pic ">
                           <img src={item.image} alt={item.name} />
                         </td>
-                        <td class="cart-title text-center">
+                        <td className="cart-title text-center">
                           <Link to={`/product/${item.product}`}>
                             <h5>{item.name}</h5>
                           </Link>
                         </td>
 
-                        <td class="total-price">${item.price * item.qty}</td>
+                        <td className="total-price">
+                          ${item.price * item.qty}
+                        </td>
                       </tr>
                     ))}
                   </tbody>

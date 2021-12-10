@@ -2,12 +2,12 @@ import React from "react";
 
 function PartnerLogo() {
   return (
-    <div class="partner-logo">
-      <div class="container">
-        <div class="logo-carousel owl-carousel owl-loaded">
-          <div class="owl-stage-outer">
+    <div className="partner-logo">
+      <div className="container">
+        <div className="logo-carousel owl-carousel owl-loaded">
+          <div className="owl-stage-outer">
             <div
-              class="owl-stage"
+              className="owl-stage"
               style={{
                 transform: "translate3d(0px, 0px, 0px)",
                 transition: "all 0s ease 0s",
@@ -15,11 +15,11 @@ function PartnerLogo() {
               }}
             >
               <div
-                class="owl-item active"
+                className="owl-item active"
                 style={{ width: "204px", marginRight: "30px" }}
               >
-                <div class="logo-item">
-                  <div class="tablecell-inner">
+                <div className="logo-item">
+                  <div className="tablecell-inner">
                     <img
                       src={`${process.env.PUBLIC_URL}/assets/images/logo-carousel/logo-1.png`}
                       alt=""
@@ -28,11 +28,11 @@ function PartnerLogo() {
                 </div>
               </div>
               <div
-                class="owl-item active"
+                className="owl-item active"
                 style={{ width: "204px", marginRight: "30px" }}
               >
-                <div class="logo-item">
-                  <div class="tablecell-inner">
+                <div className="logo-item">
+                  <div className="tablecell-inner">
                     <img
                       src={`${process.env.PUBLIC_URL}/assets/images/logo-carousel/logo-2.png`}
                       alt=""
@@ -41,11 +41,11 @@ function PartnerLogo() {
                 </div>
               </div>
               <div
-                class="owl-item active"
+                className="owl-item active"
                 style={{ width: "204px", marginRight: "30px" }}
               >
-                <div class="logo-item">
-                  <div class="tablecell-inner">
+                <div className="logo-item">
+                  <div className="tablecell-inner">
                     <img
                       src={`${process.env.PUBLIC_URL}/assets/images/logo-carousel/logo-3.png`}
                       alt=""
@@ -54,11 +54,11 @@ function PartnerLogo() {
                 </div>
               </div>
               <div
-                class="owl-item active"
+                className="owl-item active"
                 style={{ width: "204px", marginRight: "30px" }}
               >
-                <div class="logo-item">
-                  <div class="tablecell-inner">
+                <div className="logo-item">
+                  <div className="tablecell-inner">
                     <img
                       src={`${process.env.PUBLIC_URL}/assets/images/logo-carousel/logo-4.png`}
                       alt=""
@@ -67,11 +67,11 @@ function PartnerLogo() {
                 </div>
               </div>
               <div
-                class="owl-item active"
+                className="owl-item active"
                 style={{ width: "204px", marginRight: "30px" }}
               >
-                <div class="logo-item">
-                  <div class="tablecell-inner">
+                <div className="logo-item">
+                  <div className="tablecell-inner">
                     <img
                       src={`${process.env.PUBLIC_URL}/assets/images/logo-carousel/logo-5.png`}
                       alt=""
@@ -81,15 +81,15 @@ function PartnerLogo() {
               </div>
             </div>
           </div>
-          <div class="owl-nav disabled">
-            <button type="button" role="presentation" class="owl-prev">
-              <i class="ti-angle-left"></i>
+          <div className="owl-nav disabled">
+            <button type="button" role="presentation" className="owl-prev">
+              <i className="ti-angle-left"></i>
             </button>
-            <button type="button" role="presentation" class="owl-next">
-              <i class="ti-angle-right"></i>
+            <button type="button" role="presentation" className="owl-next">
+              <i className="ti-angle-right"></i>
             </button>
           </div>
-          <div class="owl-dots disabled"></div>
+          <div className="owl-dots disabled"></div>
         </div>
       </div>
     </div>

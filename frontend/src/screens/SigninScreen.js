@@ -26,16 +26,16 @@ export default function SigninScreen(props) {
     }
   }, [props.history, redirect, userInfo]);
   return (
-    <div class="register-login-section spad">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 offset-lg-3">
-            <div class="login-form">
+    <div className="register-login-section spad">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6 offset-lg-3">
+            <div className="login-form">
               <h2>Login</h2>
               {loading && <LoadingBox></LoadingBox>}
               {error && <MessageBox variant="danger">{error}</MessageBox>}
               <form onSubmit={submitHandler}>
-                <div class="group-input">
+                <div className="group-input">
                   <label htmlFor="email">Email address *</label>
                   <input
                     type="email"
@@ -44,7 +44,7 @@ export default function SigninScreen(props) {
                     onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
-                <div class="group-input">
+                <div className="group-input">
                   <label for="password">Password *</label>
                   <input
                     type="password"
@@ -54,12 +54,12 @@ export default function SigninScreen(props) {
                   />
                 </div>
 
-                <button type="submit" class="site-btn login-btn">
+                <button type="submit" className="site-btn login-btn">
                   Sign In
                 </button>
               </form>
-              <div class="switch-login">
-                <Link to="/register" class="or-login">
+              <div className="switch-login">
+                <Link to="/register" className="or-login">
                   Or Create An Account
                 </Link>
               </div>

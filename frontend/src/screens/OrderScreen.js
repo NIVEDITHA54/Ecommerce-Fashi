@@ -57,20 +57,20 @@ export default function OrderScreen(props) {
     <MessageBox variant="danger">{error}</MessageBox>
   ) : (
     <div>
-      <section class="shopping-cart spad checkout-form">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="place-order">
+      <section className="shopping-cart spad checkout-form">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="place-order">
                 <h4>Order {order._id}</h4>
-                <div class="order-total">
+                <div className="order-total">
                   <p>
-                    <strong>Name:</strong> {cart.shippingAddress.fullName}{" "}
+                    <strong>Name:</strong> {order.shippingAddress.fullName}{" "}
                     <br />
-                    <strong>Address: </strong> {cart.shippingAddress.address},
-                    {cart.shippingAddress.city},{" "}
-                    {cart.shippingAddress.postalCode},
-                    {cart.shippingAddress.country}
+                    <strong>Address: </strong> {order.shippingAddress.address},
+                    {order.shippingAddress.city},{" "}
+                    {order.shippingAddress.postalCode},
+                    {order.shippingAddress.country}
                   </p>
                   {order.isDelivered ? (
                     <MessageBox variant="success">
@@ -81,11 +81,11 @@ export default function OrderScreen(props) {
                   )}
                 </div>
               </div>
-              <div class="place-order mt-5">
+              <div className="place-order mt-5">
                 <h4>Payment details</h4>
-                <div class="order-total">
+                <div className="order-total">
                   <p>
-                    <strong>Method:</strong> {cart.paymentMethod}
+                    <strong>Method:</strong> {order.paymentMethod}
                   </p>
                   {order.isPaid ? (
                     <MessageBox variant="success">
@@ -97,21 +97,21 @@ export default function OrderScreen(props) {
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div className="col-lg-6">
               <h4>Order Summary</h4>
-              <div class="proceed-checkout">
+              <div className="proceed-checkout">
                 <ul>
-                  <li class="subtotal">
-                    Items <span>${cart.itemsPrice.toFixed(2)}</span>
+                  <li className="subtotal">
+                    Items <span>${order.itemsPrice.toFixed(2)}</span>
                   </li>
-                  <li class="subtotal">
-                    Shipping <span>${cart.shippingPrice.toFixed(2)}</span>
+                  <li className="subtotal">
+                    Shipping <span>${order.shippingPrice.toFixed(2)}</span>
                   </li>
-                  <li class="subtotal">
-                    Tax <span>${cart.taxPrice.toFixed(2)}</span>
+                  <li className="subtotal">
+                    Tax <span>${order.taxPrice.toFixed(2)}</span>
                   </li>
-                  <li class="cart-total">
-                    Order Total <span>${cart.totalPrice.toFixed(2)}</span>
+                  <li className="cart-total">
+                    Order Total <span>${order.totalPrice.toFixed(2)}</span>
                   </li>
                 </ul>
                 {!order.isPaid && (
@@ -136,26 +136,28 @@ export default function OrderScreen(props) {
               </div>
             </div>
           </div>
-          <div class="row mt-5">
-            <div class="col-lg-6">
+          <div className="row mt-5">
+            <div className="col-lg-6">
               <h4>Order Items</h4>
-              <div class="cart-table">
+              <div className="cart-table">
                 <table>
                   <thead></thead>
 
                   <tbody>
-                    {cart.cartItems.map((item) => (
+                    {order.cartItems.map((item) => (
                       <tr key={item.product}>
-                        <td class="cart-pic ">
+                        <td className="cart-pic ">
                           <img src={item.image} alt={item.name} />
                         </td>
-                        <td class="cart-title text-center">
+                        <td className="cart-title text-center">
                           <Link to={`/product/${item.product}`}>
                             <h5>{item.name}</h5>
                           </Link>
                         </td>
 
-                        <td class="total-price">${item.price * item.qty}</td>
+                        <td className="total-price">
+                          ${item.price * item.qty}
+                        </td>
                       </tr>
                     ))}
                   </tbody>

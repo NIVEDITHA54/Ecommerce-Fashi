@@ -17,23 +17,23 @@ export default function PaymentMethodScreen(props) {
     props.history.push("/placeorder");
   };
   return (
-    <section class="checkout-section spad">
-      <div class="container">
-        <form class="checkout-form" onSubmit={submitHandler}>
-          <div class="row">
+    <section className="checkout-section spad">
+      <div className="container">
+        <form className="checkout-form" onSubmit={submitHandler}>
+          <div className="row">
             <div className="col-lg-12">
               <CheckoutSteps step1 step2 step3></CheckoutSteps>
             </div>
-            <div class="col-lg-12 mt-5">
+            <div className="col-lg-12 mt-5">
               <h4>Payment Method</h4>
             </div>
           </div>
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="place-order">
-                <div class="order-total">
-                  <div class="payment-check">
-                    <div class="pc-item">
+          <div className="row">
+            <div className="col-lg-6">
+              <div className="place-order">
+                <div className="order-total">
+                  <div className="payment-check">
+                    <div className="pc-item">
                       <label htmlFor="paypal">
                         Paypal
                         <input
@@ -44,10 +44,10 @@ export default function PaymentMethodScreen(props) {
                           checked
                           onChange={(e) => setPaymentMethod(e.target.value)}
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </label>
                     </div>
-                    <div class="pc-item">
+                    <div className="pc-item">
                       <label for="stripe">
                         Stripe
                         <input
@@ -57,12 +57,12 @@ export default function PaymentMethodScreen(props) {
                           value="Stripe"
                           onChange={(e) => setPaymentMethod(e.target.value)}
                         />
-                        <span class="checkmark"></span>
+                        <span className="checkmark"></span>
                       </label>
                     </div>
                   </div>
-                  <div class="order-btn">
-                    <button type="submit" class="site-btn register-btn">
+                  <div className="order-btn">
+                    <button type="submit" className="site-btn register-btn">
                       Continue
                     </button>
                   </div>

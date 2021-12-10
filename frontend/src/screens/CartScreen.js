@@ -35,16 +35,16 @@ export default function CartScreen(props) {
           Cart is empty. <Link to="/">Go Shopping</Link>
         </MessageBox>
       ) : (
-        <section class="shopping-cart spad">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="cart-table">
+        <section className="shopping-cart spad">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="cart-table">
                   <table>
                     <thead>
                       <tr>
                         <th>Image</th>
-                        <th class="p-name">Product Name</th>
+                        <th className="p-name">Product Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
@@ -54,18 +54,18 @@ export default function CartScreen(props) {
                     <tbody>
                       {cartItems.map((item) => (
                         <tr key={item.product}>
-                          <td class="cart-pic first-row">
+                          <td className="cart-pic first-row">
                             <img src={item.image} alt={item.name} />
                           </td>
-                          <td class="cart-title first-row">
+                          <td className="cart-title first-row">
                             <Link to={`/product/${item.product}`}>
                               <h5>{item.name}</h5>
                             </Link>
                           </td>
-                          <td class="p-price first-row">${item.price}</td>
-                          <td class="qua-col first-row">
-                            <div class="quantity">
-                              <div class="pro-qty">
+                          <td className="p-price first-row">${item.price}</td>
+                          <td className="qua-col first-row">
+                            <div className="quantity">
+                              <div className="pro-qty">
                                 <select
                                   value={item.qty}
                                   onChange={(e) =>
@@ -88,12 +88,12 @@ export default function CartScreen(props) {
                               </div>
                             </div>
                           </td>
-                          <td class="total-price first-row">
+                          <td className="total-price first-row">
                             ${item.price * item.qty}
                           </td>
-                          <td class="close-td first-row">
+                          <td className="close-td first-row">
                             <i
-                              class="ti-close"
+                              className="ti-close"
                               onClick={() =>
                                 removeFromCartHandler(item.product)
                               }
@@ -104,27 +104,27 @@ export default function CartScreen(props) {
                     </tbody>
                   </table>
                 </div>
-                <div class="row">
-                  <div class="col-lg-4">
-                    <div class="cart-buttons">
-                      <Link to="/" class="primary-btn continue-shop">
+                <div className="row">
+                  <div className="col-lg-4">
+                    <div className="cart-buttons">
+                      <Link to="/" className="primary-btn continue-shop">
                         Continue shopping
                       </Link>
                     </div>
-                    <div class="discount-coupon">
+                    <div className="discount-coupon">
                       <h6>Discount Codes</h6>
-                      <form action="#" class="coupon-form">
+                      <form action="#" className="coupon-form">
                         <input type="text" placeholder="Enter your codes" />
-                        <button type="submit" class="site-btn coupon-btn">
+                        <button type="submit" className="site-btn coupon-btn">
                           Apply
                         </button>
                       </form>
                     </div>
                   </div>
-                  <div class="col-lg-4 offset-lg-4">
-                    <div class="proceed-checkout">
+                  <div className="col-lg-4 offset-lg-4">
+                    <div className="proceed-checkout">
                       <ul>
-                        <li class="subtotal">
+                        <li className="subtotal">
                           Subtotal ({cartItems.reduce((a, c) => a + c.qty, 0)}{" "}
                           items) :{" "}
                           <span>
@@ -132,7 +132,7 @@ export default function CartScreen(props) {
                             {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
                           </span>
                         </li>
-                        <li class="cart-total">
+                        <li className="cart-total">
                           Total ({cartItems.reduce((a, c) => a + c.qty, 0)}{" "}
                           items) :{" "}
                           <span>
@@ -141,13 +141,17 @@ export default function CartScreen(props) {
                           </span>
                         </li>
                       </ul>
-                      <a
-                        class="proceed-btn"
-                        onClick={checkoutHandler}
-                        disabled={cartItems.length === 0}
-                      >
-                        PROCEED TO CHECK OUT
-                      </a>
+                      <ul>
+                        <div className="col-sm-12">
+                          <button
+                            className="btn proceed-btn btn-block"
+                            onClick={checkoutHandler}
+                            disabled={cartItems.length === 0}
+                          >
+                            PROCEED TO CHECK OUT
+                          </button>
+                        </div>
+                      </ul>
                     </div>
                   </div>
                 </div>

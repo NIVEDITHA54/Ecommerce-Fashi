@@ -27,14 +27,14 @@ export default function ShippingAddressScreen(props) {
   return (
     <div>
       <CheckoutSteps step1 step2></CheckoutSteps>
-      <section class="checkout-section spad">
-        <div class="container">
-          <form class="checkout-form" onSubmit={submitHandler}>
-            <div class="row">
-              <div class="col-lg-6">
+      <section className="checkout-section spad">
+        <div className="container">
+          <form className="checkout-form" onSubmit={submitHandler}>
+            <div className="row">
+              <div className="col-lg-6">
                 <h4>Shipping Address</h4>
-                <div class="row">
-                  <div class="col-lg-6">
+                <div className="row">
+                  <div className="col-lg-6">
                     <label for="fullName">
                       Full Name<span>*</span>
                     </label>
@@ -46,7 +46,7 @@ export default function ShippingAddressScreen(props) {
                       required
                     />
                   </div>
-                  <div class="col-lg-6">
+                  <div className="col-lg-6">
                     <label for="address">
                       Address<span>*</span>
                     </label>
@@ -58,7 +58,7 @@ export default function ShippingAddressScreen(props) {
                       required
                     />
                   </div>
-                  <div class="col-lg-12">
+                  <div className="col-lg-12">
                     <label for="city">
                       City<span>*</span>
                     </label>
@@ -70,7 +70,7 @@ export default function ShippingAddressScreen(props) {
                       required
                     />
                   </div>
-                  <div class="col-lg-12">
+                  <div className="col-lg-12">
                     <label for="postalCode">
                       Postal Code<span>*</span>
                     </label>
@@ -82,7 +82,7 @@ export default function ShippingAddressScreen(props) {
                       required
                     />
                   </div>
-                  <div class="col-lg-12">
+                  <div className="col-lg-12">
                     <label for="country">
                       Country<span>*</span>
                     </label>
@@ -95,8 +95,8 @@ export default function ShippingAddressScreen(props) {
                     />
                   </div>
 
-                  <div class="col-lg-12">
-                    <button type="submit" class="site-btn register-btn">
+                  <div className="col-lg-12">
+                    <button type="submit" className="site-btn register-btn">
                       Continue
                     </button>
                   </div>

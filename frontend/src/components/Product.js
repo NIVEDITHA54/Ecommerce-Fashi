@@ -4,32 +4,32 @@ import Rating from "./Rating";
 export default function Product(props) {
   const { product } = props;
   return (
-    <div key={product._id} class="col-lg-4 col-sm-6">
-      <div class="product-item">
-        <div class="pi-pic">
+    <div key={product._id} className="col-lg-4 col-sm-6">
+      <div className="product-item">
+        <div className="pi-pic">
           <img src={product.image} alt="" />
 
-          <div class="icon">
-            <i class="icon_heart_alt"></i>
+          <div className="icon">
+            <i className="icon_heart_alt"></i>
           </div>
           <ul>
-            <li class="w-icon active">
+            <li className="w-icon active">
               <a href={`/product/${product._id}`}>
-                <i class="icon_bag_alt"></i>
+                <i className="icon_bag_alt"></i>
               </a>
             </li>
-            <li class="quick-view">
+            <li className="quick-view">
               <a href={`/product/${product._id}`}>+ Quick View</a>
             </li>
-            <li class="w-icon">
+            <li className="w-icon">
               <a href={`/product/${product._id}`}>
-                <i class="fa fa-random"></i>
+                <i className="fa fa-random"></i>
               </a>
             </li>
           </ul>
         </div>
-        <div class="pi-text">
-          <div class="catagory-name">{product.brand}</div>
+        <div className="pi-text">
+          <div className="catagory-name">{product.brand}</div>
           <a href={`/product/${product._id}`}>
             <h5>{product.name}</h5>
           </a>
@@ -37,7 +37,7 @@ export default function Product(props) {
             rating={product.rating}
             numReviews={product.numReviews}
           ></Rating>
-          <div class="product-price">${product.price}</div>
+          <div className="product-price">${product.price}</div>
         </div>
       </div>
     </div>

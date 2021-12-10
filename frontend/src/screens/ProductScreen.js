@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { detailsProduct } from "../actions/productActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
@@ -27,36 +26,36 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <>
-          <div class="breacrumb-section">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="breadcrumb-text product-more">
+          <div className="breacrumb-section">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="breadcrumb-text product-more">
                     <a href="/">
-                      <i class="fa fa-home"></i> Back to Homepage
+                      <i className="fa fa-home"></i> Back to Homepage
                     </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <section class="product-shop spad page-details">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="row">
-                    <div class="col-lg-6">
+          <section className="product-shop spad page-details">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="row">
+                    <div className="col-lg-6">
                       <div
-                        class="product-pic-zoom"
+                        className="product-pic-zoom"
                         style={{ position: "relative", overflow: "hidden" }}
                       >
                         <img
-                          class="product-big-img"
+                          className="product-big-img"
                           src={product.image}
                           alt=""
                         />
-                        <div class="zoom-icon">
-                          <i class="fa fa-search-plus"></i>
+                        <div className="zoom-icon">
+                          <i className="fa fa-search-plus"></i>
                         </div>
                         <img
                           role="presentation"
@@ -68,24 +67,24 @@ export default function ProductScreen(props) {
                             top: "-41.3333px",
                             left: "-105.667px",
                             opacity: "0",
-                            width: "440px;",
-                            height: "520px;",
+                            width: "440px",
+                            height: "520px",
                             border: "none",
                             maxWidth: "none",
                             maxHeight: "none",
                           }}
                         />
                       </div>
-                      <div class="product-thumbs"></div>
+                      <div className="product-thumbs"></div>
                     </div>
 
-                    <div class="col-lg-6">
-                      <div class="product-details">
-                        <div class="pd-title">
+                    <div className="col-lg-6">
+                      <div className="product-details">
+                        <div className="pd-title">
                           <span>{product.brand}</span>
                           <h3>{product.name}</h3>
-                          <a href="#" class="heart-icon">
-                            <i class="icon_heart_alt"></i>
+                          <a href="/" className="heart-icon">
+                            <i className="icon_heart_alt"></i>
                           </a>
                         </div>
 
@@ -94,47 +93,53 @@ export default function ProductScreen(props) {
                           numReviews={product.numReviews}
                         ></Rating>
 
-                        <div class="pd-desc">
+                        <div className="pd-desc">
                           <p>{product.description}</p>
                           <h4>${product.price}</h4>
                         </div>
-                        <div class="pd-color">
+                        <div className="pd-color">
                           <h6>Color</h6>
-                          <div class="pd-color-choose">
-                            <div class="cc-item">
+                          <div className="pd-color-choose">
+                            <div className="cc-item">
                               <input type="radio" id="cc-black" />
-                              <label for="cc-black"></label>
+                              <label htmlFor="cc-black"></label>
                             </div>
-                            <div class="cc-item">
+                            <div className="cc-item">
                               <input type="radio" id="cc-yellow" />
-                              <label for="cc-yellow" class="cc-yellow"></label>
+                              <label
+                                htmlFor="cc-yellow"
+                                className="cc-yellow"
+                              ></label>
                             </div>
-                            <div class="cc-item">
+                            <div className="cc-item">
                               <input type="radio" id="cc-violet" />
-                              <label for="cc-violet" class="cc-violet"></label>
+                              <label
+                                htmlFor="cc-violet"
+                                className="cc-violet"
+                              ></label>
                             </div>
                           </div>
                         </div>
-                        <div class="pd-size-choose">
-                          <div class="sc-item">
+                        <div className="pd-size-choose">
+                          <div className="sc-item">
                             <input type="radio" id="sm-size" />
-                            <label for="sm-size">s</label>
+                            <label htmlFor="sm-size">s</label>
                           </div>
-                          <div class="sc-item">
+                          <div className="sc-item">
                             <input type="radio" id="md-size" />
-                            <label for="md-size">m</label>
+                            <label htmlFor="md-size">m</label>
                           </div>
-                          <div class="sc-item">
+                          <div className="sc-item">
                             <input type="radio" id="lg-size" />
-                            <label for="lg-size">l</label>
+                            <label htmlFor="lg-size">l</label>
                           </div>
-                          <div class="sc-item">
+                          <div className="sc-item">
                             <input type="radio" id="xl-size" />
-                            <label for="xl-size">xs</label>
+                            <label htmlFor="xl-size">xs</label>
                           </div>
                         </div>
 
-                        <ul class="pd-tags">
+                        <ul className="pd-tags">
                           <li>
                             <span>Seller</span>: {product.brand}
                           </li>
@@ -166,18 +171,19 @@ export default function ProductScreen(props) {
                           </li>
                         </ul>
                         {product.countInStock > 0 ? (
-                          <div class="quantity">
-                            <a
+                          <div className="quantity">
+                            <button
                               onClick={addToCartHandler}
-                              class="primary-btn pd-cart"
+                              className="btn primary-btn pd-cart"
                               style={{ color: "#ffffff" }}
+                              type="button"
                             >
                               Add To Cart
-                            </a>
+                            </button>
                           </div>
                         ) : (
-                          <div class="quantity">
-                            <span class="danger">
+                          <div className="quantity">
+                            <span className="danger">
                               Currently the product is not in stock.We will
                               notify you once it is available.
                             </span>
