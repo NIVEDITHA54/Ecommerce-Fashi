@@ -1,22 +1,20 @@
 {
-  "name": "amazona",
+  "name": "fashi",
   "type": "module",
   "version": "1.0.0",
   "description": "Ecommerce website",
   "main": "index.js",
   "scripts": {
+    "build": "cd frontend && npm install && npm run build",
     "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/basir/amazona.git"
+    "url": "git+https://github.com/NIVEDITHA54/Ecommerce-Fashi.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/basir/amazona/issues"
-  },
-  "homepage": "https://github.com/basir/amazona#readme",
+  "homepage": "https://github.com/NIVEDITHA54/Ecommerce-Fashi#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
@@ -30,5 +28,9 @@
     "eslint": "^7.9.0",
     "eslint-plugin-react": "^7.21.2",
     "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "14.17.3",
+    "npm": "6.14.13"
   }
 }
