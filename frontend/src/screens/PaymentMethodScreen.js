@@ -24,11 +24,11 @@ export default function PaymentMethodScreen(props) {
             <div className="col-lg-12">
               <CheckoutSteps step1 step2 step3></CheckoutSteps>
             </div>
-            <div className="col-lg-12 mt-5">
-              <h4>Payment Method</h4>
+            <div className="col-lg-12 mt-5 text-center">
+              <h2>Payment Method</h2>
             </div>
           </div>
-          <div className="row">
+          <div className="row mt-5 justify-content-center">
             <div className="col-lg-6">
               <div className="place-order">
                 <div className="order-total">

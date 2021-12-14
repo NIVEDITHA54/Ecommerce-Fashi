@@ -27,7 +27,7 @@ function Header() {
                 </Link>
               </div>
             </div>
-            <div className="col-lg-5 col-md-5">
+            <div className="col-lg-4 col-md-5">
               <div className="advanced-search">
                 <div className="input-group">
                   <input type="text" placeholder="What do you need?" />
@@ -37,7 +37,7 @@ function Header() {
                 </div>
               </div>
             </div>
-            <div className="col-lg-5 text-right col-md-5">
+            <div className="col-lg-6 text-right col-md-5">
               <ul className="nav-right">
                 <li className="cart-icon">
                   <Link to="/cart">
@@ -48,13 +48,20 @@ function Header() {
 
                 {userInfo ? (
                   <li>
-                    <Link to="#" className="login-panel">
+                    <Link to="/profile" className="login-panel">
                       <i className="fa fa-user p-2"></i>
                       {userInfo.name}
                     </Link>
 
+                    <li>
+                      <Link to="/orderhistory" className="login-panel">
+                        <i class="fa fa-history p-2"></i>
+                        Order History
+                      </Link>
+                    </li>
+
                     <Link
-                      to="/signin"
+                      to="#signout"
                       className="login-panel"
                       onClick={signoutHandler}
                     >

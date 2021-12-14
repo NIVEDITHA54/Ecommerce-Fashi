@@ -13,11 +13,6 @@ export default function Product(props) {
             <i className="icon_heart_alt"></i>
           </div>
           <ul>
-            <li className="w-icon active">
-              <a href={`/product/${product._id}`}>
-                <i className="icon_bag_alt"></i>
-              </a>
-            </li>
             <li className="quick-view">
               <a href={`/product/${product._id}`}>+ Quick View</a>
             </li>

@@ -26,13 +26,19 @@ export default function ShippingAddressScreen(props) {
   };
   return (
     <div>
-      <CheckoutSteps step1 step2></CheckoutSteps>
       <section className="checkout-section spad">
         <div className="container">
           <form className="checkout-form" onSubmit={submitHandler}>
             <div className="row">
+              <div className="col-lg-12">
+                <CheckoutSteps step1 step2></CheckoutSteps>
+              </div>
+              <div className="col-lg-12 mt-5 text-center">
+                <h2>Shipping Address</h2>
+              </div>
+            </div>
+            <div className="row justify-content-center mt-5">
               <div className="col-lg-6">
-                <h4>Shipping Address</h4>
                 <div className="row">
                   <div className="col-lg-6">
                     <label for="fullName">

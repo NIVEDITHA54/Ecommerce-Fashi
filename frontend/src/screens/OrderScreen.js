@@ -144,7 +144,7 @@ export default function OrderScreen(props) {
                   <thead></thead>
 
                   <tbody>
-                    {order.cartItems.map((item) => (
+                    {order.orderItems.map((item) => (
                       <tr key={item.product}>
                         <td className="cart-pic ">
                           <img src={item.image} alt={item.name} />
